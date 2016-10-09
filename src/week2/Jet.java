@@ -1,22 +1,25 @@
 package week2;
 import java.text.DecimalFormat;
-public class Jet {
+public  class Jet {
 	
 //fields
 	protected String name; 
-	protected float range;
 	protected float topSpeed; 
+	protected float range;
+	protected float price; 
+	
 	
 //constructors 
 	public Jet(){
-		this("Jet", 1F, 1F); 
+		
 		}//end no args constructor 
 	
 
-	public Jet(String name, float range, float topSpeed) {
-		this.name = name;
+	public Jet(String name, float range,  float topSpeed, float price) {
+		this.name=name; 
 		this.range = range;
 		this.topSpeed = topSpeed;
+		this.price=price; 
 	}//end constructor
 	
 //methods	
@@ -26,7 +29,17 @@ public class Jet {
 	}// end speedToMach
 	
 	
-  	public String getName() {
+  	public float getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+
+	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -48,7 +61,7 @@ public class Jet {
 
 	@Override
 	public String toString() {
-		return "\nModel: " + name + "\nRange: " + range + " Miles"+"\nTop Speed: "+ topSpeed+" Mph" +"\nMach: "+speedToMach()+"\n";
+		return "\nModel: " + name +"\nMach: "+speedToMach()+ "\nRange: " + range + " Miles"+"\nPrice: "+price+" Million\n";
 	}
 	
 
